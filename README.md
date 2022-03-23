@@ -75,6 +75,11 @@ QUIT;
 - go test -v -coverprofile cover.out ./...
 
 
+## Commands
+- git tag 1.0.0
+- git push origin 1.0.0
+- go mod init `unique path`
+- go test ./... will take care of pulling and updating all the dependency in the module file
 ## Refrences
 - https://www.datastax.com/learn/apache-cassandra-operations-in-kubernetes/running-a-cassandra-application-in-docker
-
+- https://go.dev/ref/mod#private-module-privacy

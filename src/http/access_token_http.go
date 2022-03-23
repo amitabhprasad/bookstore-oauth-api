@@ -39,8 +39,8 @@ func (h *accessTokenHandler) GetById(c *gin.Context) {
 func (h *accessTokenHandler) Create(c *gin.Context) {
 	var at token.AccessTokenRequest
 	if err := c.ShouldBindJSON(&at); err != nil {
-		restErr := rest_errors.NewbadRequestError("invalid json body")
-		c.JSON(restErr.Status, restErr)
+		restErr := rest_errors.NewBadRequestError("invalid json body")
+		c.JSON(restErr.Status(), restErr)
 		return
 	}
 	access_token, err := h.service.Create(at)
@@ -53,8 +53,8 @@ func (h *accessTokenHandler) Create(c *gin.Context) {
 func (h *accessTokenHandler) UpdateExpirationTime(c *gin.Context) {
 	var at token.AccessToken
 	if err := c.ShouldBindJSON(&at); err != nil {
-		restErr := rest_errors.NewbadRequestError("invalid json body")
-		c.JSON(restErr.Status, restErr)
+		restErr := rest_errors.NewBadRequestError("invalid json body")
+		c.JSON(restErr.Status(), restErr)
 		return
 	}
 
