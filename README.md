@@ -75,6 +75,13 @@ QUIT;
 - go test -v -coverprofile cover.out ./...
 
 
+
+docker run -i -t -d -e cassandra_host=172.17.0.3 -p 8082:8082 oauth-api
+
+make sure cassandra is running in the same network as the micro services use this to get ip of the container
+docker inspect <docker_id> | grep IPAddress
+
+
 ## Commands
 - git tag 1.0.0
 - git push origin 1.0.0
